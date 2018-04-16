@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
-@ServletComponentScan("poolConfig")  //扫描servlet组件
+@ServletComponentScan("poolConfig")  //扫描
 @ComponentScan("com.jinglun.controller,com.jinglun.biz")//扫描biz，controller组件
 @MapperScan("com.jinglun.dao")    //扫描mapper组件
 @EnableAutoConfiguration
