@@ -1,8 +1,6 @@
-server:
-  port: 8080
 mybatis:
   mapper-locations:
-spring:
-  freemarker:
-    allow-request-override: false
+    classpath:/com/jinglun/dao/*Mapper.xml
+  type-aliases-package: com.jinglun.entity
+
   
