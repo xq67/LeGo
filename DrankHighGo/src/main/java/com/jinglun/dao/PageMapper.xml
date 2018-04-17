@@ -4,6 +4,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "E:\workSpace_jsp\mybatis_dvd\WebRoot\mybatis-3-mapper.dtd">
 <mapper namespace="com.jinglun.dao.PageMapper">
 	<cache></cache>
+	<!-- 订单列表映射 -->
+	<resultMap type="Overorder" id="overO">
+		<id property="ooid" column="ooId"/>
+		<association property="user" javaType="User" column="uid" select="findUserByid"></association>
+	</resultMap>
+	<select id="findAllOvByDbid" resultMap="overO">
+		SELECT * FROM overorder where dbid=#{id}
+	</select>
+	<!-- 订单列表映射结束 -->
+	<!-- 评论列表映射 -->
+	<resultMap type="Say" id="mapsay">
+		<id property="sayid" column="sayId"/>
+		<association property="user" javaType="User" column="uid" select="findUserByid"></association>
+	</resultMap>
+	<select id="findAllSayByDbid" resultMap="mapsay">
+		SELECT * FROM say where dbid=#{id}
+	</select>
+	<!-- 评论列表映射结束-->
+	<select id="findUserByid" resultType="User">
+		SELECT * FROM user where uid=#{uid}
+	</select>
 	<select id="findAllDea" resultType="Dealer">
 		SELECT * FROM DEALER
 	</select>
@@ -27,5 +48,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<select id="findDBByDaid" resultType="DrankB">
 		SELECT * FROM DRANKB where daid=#{id}
+	</select>
+	<select id="findDbsellCount" resultType="int">
+		SELECT COUNT(1)FROM overorder WHERE dbid=#{id}
 	</select>
 </mapper>

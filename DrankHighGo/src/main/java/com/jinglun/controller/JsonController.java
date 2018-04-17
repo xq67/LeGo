@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jinglun.biz.L_pageShowBiz;
 import com.jinglun.entity.DrankB;
+import com.jinglun.entity.Overorder;
+import com.jinglun.entity.Say;
 
 @RestController
 public class JsonController {
@@ -34,4 +36,15 @@ public class JsonController {
 		return list;
 	}
 	
+	@RequestMapping("/getOvero")//获取某个产品所有订单年信息
+	 public List<Overorder> getoo(Integer dbid){
+		List<Overorder> list=l_pageShowBiz.findAllOvByDbid(dbid);
+		return list;
+	 }
+	
+	@RequestMapping("/getSay")//获取某个产品所有评论信息
+	 public List<Say> getsay(Integer dbid){
+		List<Say> list=l_pageShowBiz.findAllSayByDbid(dbid);
+		return list;
+	 }
 }

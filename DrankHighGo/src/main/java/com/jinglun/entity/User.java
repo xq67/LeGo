@@ -3,18 +3,19 @@ package com.jinglun.entity;
 import java.io.Serializable;
 
 public class User implements Serializable{
-	private String name;
-	private Integer age;
-	public String getName() {
-		return name;
+	private String uname;
+	private Integer uid;
+	public String getUname() {
+		return uname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUname(String uname) {
+		this.uname = uname;
 	}
-	public Integer getAge() {
-		return age;
+	public Integer getUid() {
+		return uid;
 	}
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setUid(Integer uid) {
+		this.uid = uid;
 	}
+	
 }
