@@ -15,6 +15,8 @@ import com.jinglun.entity.DrankA;
 import com.jinglun.entity.DrankB;
 import com.jinglun.entity.Imgurl;
 import com.jinglun.entity.Notice;
+import com.jinglun.entity.Overorder;
+import com.jinglun.entity.Say;
 @Service
 public class L_pageShowBizImpl implements L_pageShowBiz {
 	@Resource
@@ -37,9 +39,11 @@ public class L_pageShowBizImpl implements L_pageShowBiz {
 	public Map<String, Object> findDBInfoById(Integer id) {
 		DrankB db=pageMapper.findDrankBById(id);
 		List<Imgurl> list=pageMapper.findDbImgById(id);
+		int sell=pageMapper.findDbsellCount(id);
 		Map<String, Object>map=new HashMap<String, Object>();
 		map.put("dbInfo", db);
 		map.put("imglist", list);
+		map.put("sellCount", sell);
 		return map;
 	}
 
@@ -53,6 +57,18 @@ public class L_pageShowBizImpl implements L_pageShowBiz {
 	public List<DrankB> findDBByDaid(Integer daid) {
 		// TODO Auto-generated method stub
 		return pageMapper.findDBByDaid(daid);
+	}
+
+	@Override
+	public List<Overorder> findAllOvByDbid(Integer dbid) {
+		// TODO Auto-generated method stub
+		return pageMapper.findAllOvByDbid(dbid);
+	}
+
+	@Override
+	public List<Say> findAllSayByDbid(Integer dbid) {
+		// TODO Auto-generated method stub
+		return pageMapper.findAllSayByDbid(dbid);
 	}
 
 
