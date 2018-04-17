@@ -1,8 +1,9 @@
 package com.jinglun.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Notice {
+public class Notice implements Serializable{
 	private Integer nocid;
 	private String notcontent;
 	private Date nottime;

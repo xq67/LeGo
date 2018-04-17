@@ -1,6 +1,8 @@
 package com.jinglun.entity;
 
-public class Imgurl {
+import java.io.Serializable;
+
+public class Imgurl implements Serializable{
 	private Integer imgid;
 	private String imgurl;
 	private Integer dbid;

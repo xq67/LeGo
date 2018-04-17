@@ -1,6 +1,8 @@
 package com.jinglun.entity;
 
-public class DrankA {
+import java.io.Serializable;
+
+public class DrankA implements Serializable{
 	private Integer daid;
 	private String daname;
 	private String daimgurl;

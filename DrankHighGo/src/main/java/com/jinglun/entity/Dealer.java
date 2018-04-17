@@ -1,6 +1,8 @@
 package com.jinglun.entity;
 
-public class Dealer {
+import java.io.Serializable;
+
+public class Dealer implements Serializable {
 	private Integer deaid;          //供应商id
 	private String deaname;
 	private String idcard;

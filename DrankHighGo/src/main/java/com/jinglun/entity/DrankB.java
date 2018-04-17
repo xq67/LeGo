@@ -1,6 +1,8 @@
 package com.jinglun.entity;
 
-public class DrankB {
+import java.io.Serializable;
+
+public class DrankB implements Serializable{
 	private Integer dbid;          //商品id
 	private String dbname;
 	private String dbimgurl;
