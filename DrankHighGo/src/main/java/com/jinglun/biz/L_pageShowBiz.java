@@ -12,4 +12,6 @@ public interface L_pageShowBiz {
 	public Map<String, Object> findDBInfoById(Integer id);
 	////获取热销产品1,//获取推荐产品2
 	public List<DrankB> findHotDB(Integer dbpro);
+	//通过daid获取db
+	public List<DrankB> findDBByDaid(Integer daid);
 }

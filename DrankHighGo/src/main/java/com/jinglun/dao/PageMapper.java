@@ -22,6 +22,8 @@ public interface PageMapper {
 	public List<Imgurl> findDbImgById(@Param("id")Integer id); //通过id获取DrankB下图片信息
 	//获取热销产品1,//获取推荐产品2
 	public List<DrankB> findHotDB(@Param("id")Integer dbpro);
+	//通过daid获取db
+	public List<DrankB> findDBByDaid(@Param("id")Integer daid);
 
 
 }

@@ -25,4 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findHotDB" resultType="DrankB">
 		SELECT * FROM DRANKB where dbpro=#{id}
 	</select>
+	<select id="findDBByDaid" resultType="DrankB">
+		SELECT * FROM DRANKB where daid=#{id}
+	</select>
 </mapper>

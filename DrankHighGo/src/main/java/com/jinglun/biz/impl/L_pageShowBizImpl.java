@@ -49,6 +49,12 @@ public class L_pageShowBizImpl implements L_pageShowBiz {
 		return pageMapper.findHotDB(dbpro);
 	}
 
+	@Override
+	public List<DrankB> findDBByDaid(Integer daid) {
+		// TODO Auto-generated method stub
+		return pageMapper.findDBByDaid(daid);
+	}
+
 
 	
 
