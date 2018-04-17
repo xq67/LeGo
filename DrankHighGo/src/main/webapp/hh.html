@@ -14,7 +14,8 @@
   	$(function(){
   		$("input[type=button]").click(function(){
   			$.get("http://localhost:8083/pageshow",function(mes){
-  				$("p").text(mes);
+  				$("p").text(mes.dea[1].deaname);
+  				alert(mes.dea[1]);
   			});
   		});
   	});

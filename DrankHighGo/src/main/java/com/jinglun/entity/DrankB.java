@@ -9,11 +9,13 @@ public class DrankB {
 	private Integer deaid;        //商品所属供应商id
 	private Integer daid;         //商品父级id
 	private Double dbprice;
+	private Integer dbpro;         //活动属性
 	public DrankB() {
 		super();
 	}
+	
 	public DrankB(Integer dbid, String dbname, String dbimgurl, String dbbrand, Integer stock, Integer deaid,
-			Integer daid, Double dbprice) {
+			Integer daid, Double dbprice, Integer dbpro) {
 		super();
 		this.dbid = dbid;
 		this.dbname = dbname;
@@ -23,7 +25,9 @@ public class DrankB {
 		this.deaid = deaid;
 		this.daid = daid;
 		this.dbprice = dbprice;
+		this.dbpro = dbpro;
 	}
+
 	public Integer getDbid() {
 		return dbid;
 	}
