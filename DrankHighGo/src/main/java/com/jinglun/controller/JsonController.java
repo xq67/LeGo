@@ -47,4 +47,9 @@ public class JsonController {
 		List<Say> list=l_pageShowBiz.findAllSayByDbid(dbid);
 		return list;
 	 }
+	@RequestMapping("/search")//模糊查询
+	public List<DrankB> Dbsearch(String dblike){
+		List<DrankB>list=l_pageShowBiz.findlikedb(dblike);
+		return list;
+	}
 }

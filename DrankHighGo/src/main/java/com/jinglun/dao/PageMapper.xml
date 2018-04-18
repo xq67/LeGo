@@ -52,4 +52,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findDbsellCount" resultType="int">
 		SELECT COUNT(1)FROM overorder WHERE dbid=#{id}
 	</select>
+	<select id="findlikedb" resultType="DrankB">
+		select * from DRANKB where dnname like CONCAT ('%',#{dblike},'%')
+	</select>
 </mapper>

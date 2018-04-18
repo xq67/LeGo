@@ -71,6 +71,12 @@ public class L_pageShowBizImpl implements L_pageShowBiz {
 		return pageMapper.findAllSayByDbid(dbid);
 	}
 
+	@Override
+	public List<DrankB> findlikedb(String dblike) {
+		// TODO Auto-generated method stub
+		return pageMapper.findlikedb(dblike);
+	}
+
 
 	
 

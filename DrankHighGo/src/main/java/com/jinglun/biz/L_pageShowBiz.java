@@ -20,4 +20,6 @@ public interface L_pageShowBiz {
 	public List<Overorder> findAllOvByDbid(Integer dbid);
 	//获取某个商品的评论信息
 	public List<Say> findAllSayByDbid(Integer dbid);
+	//模糊查询db
+	public List<DrankB> findlikedb(String dblike);
 }
