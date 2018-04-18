@@ -33,6 +33,8 @@ public interface PageMapper {
 	public List<Say> findAllSayByDbid(@Param("id")Integer dbid);
 	//获取某个商品的销量
 	public int findDbsellCount(@Param("id")Integer dbid);
+	//模糊查询db
+	public List<DrankB> findlikedb(@Param("dblike")String dblike);
 
 
 }
