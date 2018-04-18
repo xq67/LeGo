@@ -10,6 +10,9 @@ import com.jinglun.entity.DrankA;
 import com.jinglun.entity.DrankB;
 import com.jinglun.entity.Imgurl;
 import com.jinglun.entity.Notice;
+import com.jinglun.entity.Overorder;
+import com.jinglun.entity.Say;
+import com.jinglun.entity.User;
 
 public interface PageMapper {
 	List<Dealer> findAllDea();  //获取所有的供应商信息
@@ -24,6 +27,12 @@ public interface PageMapper {
 	public List<DrankB> findHotDB(@Param("id")Integer dbpro);
 	//通过daid获取db
 	public List<DrankB> findDBByDaid(@Param("id")Integer daid);
+	//获取某商品的订单信息
+	public List<Overorder> findAllOvByDbid(@Param("id")Integer dbid);
+	//获取某个商品的评论信息
+	public List<Say> findAllSayByDbid(@Param("id")Integer dbid);
+	//获取某个商品的销量
+	public int findDbsellCount(@Param("id")Integer dbid);
 
 
 }
