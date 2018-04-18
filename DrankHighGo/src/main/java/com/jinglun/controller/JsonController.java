@@ -33,5 +33,11 @@ public class JsonController {
 		List<DrankB>list=l_pageShowBiz.findHotDB(dbpro);
 		return list;
 	}
+	@RequestMapping("/classify") //进入分类列表1
+	public List<DrankB> ShowWineById(Integer id){
+		List<DrankB>list=l_pageShowBiz.findDBByDaid(id);
+		return list;
+		
+	}
 	
 }
