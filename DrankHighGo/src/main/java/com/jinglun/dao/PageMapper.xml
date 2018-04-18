@@ -32,7 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM DRANKA
 	</select>
 	<select id="findAllDrb" resultType="DrankB">
-		SELECT db.daId,db.dbName,db.dbPrice,db.dbImgUrl FROM drankb db ORDER BY stock DESC LIMIT 10
+		SELECT db.dbId,db.daId,db.dbName,db.dbPrice,db.dbImgUrl FROM drankb db ORDER BY stock DESC LIMIT 10
 	</select>
 	<select id="findNotice" resultType="Notice">
 		select N.notId,N.notContent,N.notTime from NOTICE N ORDER BY N.notTime DESC LIMIT 3
