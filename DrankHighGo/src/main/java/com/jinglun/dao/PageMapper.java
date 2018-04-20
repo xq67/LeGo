@@ -35,6 +35,15 @@ public interface PageMapper {
 	public int findDbsellCount(@Param("id")Integer dbid);
 	//模糊查询db
 	public List<DrankB> findlikedb(@Param("dblike")String dblike);
+	//推荐(库存少的销量大)
+	public List<DrankB>findCommodityByTop();
+	//新品推荐(根据id后面的为新上架的)
+	public List<DrankB>findCommodityByLater();
+	//搜索完销量排序
+	public List<DrankB> findlikebyTop(@Param("dblike")String dblike);
+	//根据价格排序
+	public List<DrankB> findlikebymoney(@Param("dblike")String dblike,@Param("order")String order);
+	
 
 
 }

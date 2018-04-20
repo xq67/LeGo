@@ -77,6 +77,30 @@ public class L_pageShowBizImpl implements L_pageShowBiz {
 		return pageMapper.findlikedb(dblike);
 	}
 
+	@Override
+	public List<DrankB> findCommodityByTop() {
+		// TODO Auto-generated method stub
+		return pageMapper.findCommodityByTop();
+	}
+
+	@Override
+	public List<DrankB> findCommodityByLater() {
+		// TODO Auto-generated method stub
+		return pageMapper.findCommodityByLater();
+	}
+
+	@Override
+	public List<DrankB> findlikebyTop(String dblike) {
+		// TODO Auto-generated method stub
+		return pageMapper.findlikebyTop(dblike);
+	}
+
+	@Override
+	public List<DrankB> findlikebymoney(String dblike, String order) {
+		// TODO Auto-generated method stub
+		return pageMapper.findlikebymoney(dblike, order);
+	}
+
 
 	
 

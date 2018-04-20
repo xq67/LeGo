@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -57,5 +58,31 @@ public class JsonController {
 	public List<DrankB> Dbsearch(String dblike){
 		List<DrankB>list=l_pageShowBiz.findlikedb(dblike);
 		return list;
+	}
+	@RequestMapping("/recommend")	//显示推荐(销量好的)
+	public List<DrankB> ShowrecommendByTop(){
+		List<DrankB>list=l_pageShowBiz.findCommodityByTop();
+		return list;		
+	}
+	@RequestMapping("/new")
+	public List<DrankB>ShowCommodity(){		
+		List<DrankB>list=l_pageShowBiz.findCommodityByLater();
+		return list;
+	}
+	@RequestMapping("/sales")
+	public List<DrankB>findlikebyTop(String dblike){
+		List<DrankB>list=l_pageShowBiz.findlikebyTop(dblike);
+		return list;
+		
+	}
+	@RequestMapping("/dbprice")
+	public List<DrankB>findlikebydbprice(String dblike,Integer num){
+		String order="asc";
+		if(num%2==0){
+			order="desc";
+		}
+		List<DrankB>list=l_pageShowBiz.findlikebymoney(dblike, order);	
+		return list;
+		
 	}
 }

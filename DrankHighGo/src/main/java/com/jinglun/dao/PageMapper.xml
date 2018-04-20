@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"E:\workSpace_jsp\mybatis_dvd\WebRoot\mybatis-3-mapper.dtd">
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jinglun.dao.PageMapper">
 	<cache></cache>
 	<!-- 订单列表映射 -->
@@ -55,5 +55,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findlikedb" resultType="DrankB">
 		SELECT * FROM drankb WHERE LOCATE(#{dblike},DBNAME)>0;
 		<!-- SELECT * FROM drankb WHERE dbname like concat('%',#{dblike},'%'); -->
+	</select>
+	<select id="findCommodityByTop" resultType="DrankB">
+		SELECT * FROM drankb ORDER BY stock ASC LIMIT 12
+	</select>
+	<select id="findCommodityByLater" resultType="DrankB">
+		SELECT * FROM drankb  ORDER BY dbid DESC   LIMIT 10;
+	</select>
+	<select id="findlikebyTop" resultType="DrankB">
+	select * from drankb where LOCATE(#{dblike},DBNAME)>0 ORDER BY stock ASC;
+	</select>
+	<select id="findlikebymoney" resultType="DrankB">
+	select * from drankb where LOCATE(#{dblike},DBNAME)>0  ORDER BY dbprice
+	<if test="order=='desc'">
+		  desc
+	</if>
+	
 	</select>
 </mapper>

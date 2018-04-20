@@ -3,6 +3,8 @@ package com.jinglun.biz;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.jinglun.entity.DrankB;
 import com.jinglun.entity.Overorder;
 import com.jinglun.entity.Say;
@@ -22,4 +24,12 @@ public interface L_pageShowBiz {
 	public List<Say> findAllSayByDbid(Integer dbid);
 	//模糊查询db
 	public List<DrankB> findlikedb(String dblike);
+	//前十推荐
+	public List<DrankB>findCommodityByTop();
+	//新品推荐
+	public List<DrankB>findCommodityByLater();
+	//搜索完销量排序
+	public List<DrankB> findlikebyTop(@Param("dblike")String dblike);
+	//根据价格排序
+	public List<DrankB> findlikebymoney(@Param("dblike")String dblike,@Param("order")String order);
 }
