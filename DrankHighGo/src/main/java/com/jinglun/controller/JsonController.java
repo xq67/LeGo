@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jinglun.biz.L_pageShowBiz;
+import com.jinglun.biz.L_userBiz;
 import com.jinglun.entity.DrankB;
 import com.jinglun.entity.Overorder;
 import com.jinglun.entity.Say;
@@ -59,6 +60,7 @@ public class JsonController {
 		List<DrankB>list=l_pageShowBiz.findlikedb(dblike);
 		return list;
 	}
+
 	@RequestMapping("/recommend")	//显示推荐(销量好的)
 	public List<DrankB> ShowrecommendByTop(){
 		List<DrankB>list=l_pageShowBiz.findCommodityByTop();
@@ -85,4 +87,7 @@ public class JsonController {
 		return list;
 		
 	}
+
+	
+
 }
