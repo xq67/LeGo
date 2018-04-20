@@ -1,6 +1,7 @@
 mybatis:
   mapper-locations:
-    classpath:/com/jinglun/dao/*Mapper.xml
+    classpath:/com/jinglun/dao/*.xml
+   
   type-aliases-package: com.jinglun.entity
 
   
