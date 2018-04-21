@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 
-import com.jinglun.util.InitListener;
+
 
 @ServletComponentScan
 @ComponentScan("com.jinglun.controller,com.jinglun.biz,com.jinglun.util")//扫描biz，controller组件
@@ -25,7 +25,7 @@ public class StartApp extends SpringBootServletInitializer {
     }
 public static void main(String[] args) {
 	SpringApplication springApplication = new SpringApplication(StartApp.class);
-	springApplication.addListeners(new InitListener());
+	/*springApplication.addListeners(new InitListener());*/
 	springApplication.run(args);
 	
 }
