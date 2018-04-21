@@ -53,9 +53,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT COUNT(1)FROM overorder WHERE dbid=#{id}
 	</select>
 	<select id="findlikedb" resultType="DrankB">
-
-		SELECT * FROM drankb WHERE LOCATE(#{dblike},DBNAME)>0;
-		
+		SELECT * FROM drankb WHERE LOCATE(#{dblike},DBNAME)>0;	
 	</select>
 	<select id="findCommodityByTop" resultType="DrankB">
 		SELECT * FROM drankb ORDER BY stock ASC LIMIT 12
